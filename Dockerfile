@@ -3,6 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
      && curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
      && apt-get install -y nodejs \
+     && apt-get install -y npm \
      git
      
 # Set the working directory
