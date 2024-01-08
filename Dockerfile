@@ -5,7 +5,17 @@ RUN apt-get update && apt-get install -y \
      && apt-get install -y nodejs \
      git
      
-RUN npm install express mongoose mongodb bcrypt
+# Set the working directory
+WORKDIR /app
+
+COPY package.json .
+
+# Install Node.js dependencies
+RUN npm install
+
+# Copy the rest of the application files
+COPY . .
+
 
 COPY index.js /usr/bin/index.js
 
