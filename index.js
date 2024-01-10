@@ -13,9 +13,9 @@ function createDirectories(basePath, structure) {
   Object.keys(structure).forEach((folder) => {
     const folderPath = path.join(basePath, folder);
 
-    // Check if the directory already exists
+    // Ensure parent directories exist before attempting to create
     if (!fs.existsSync(folderPath)) {
-      fs.mkdirSync(folderPath);
+      fs.mkdirSync(folderPath, { recursive: true });
 
       if (Array.isArray(structure[folder])) {
         structure[folder].forEach((file) => {
