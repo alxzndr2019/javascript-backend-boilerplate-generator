@@ -10,6 +10,7 @@ git config --global --add safe.directory /github/workspace/
 # Move to the GitHub workspace (where the repository is mounted)
 cd /github/workspace/
 
+node /app/index.js
 # Create a text file with "Hello, World!"
 echo "Hello, World!" > hello.txt
 
