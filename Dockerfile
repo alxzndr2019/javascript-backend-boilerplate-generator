@@ -17,6 +17,9 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
+# Correct the path for copying index.js
+COPY index.js /app/index.js
+
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
