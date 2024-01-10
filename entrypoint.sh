@@ -13,6 +13,9 @@ cd /github/workspace
 # Run your script to generate the project structure
 node /app/index.js
 
+# Add some content to the files
+find . -type f -exec sh -c 'echo "Initial content" > "{}"' \;
+
 # Commit and push changes
 git add -A && git commit -m "Generate boilerplate" && git push
 
