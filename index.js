@@ -20,7 +20,7 @@ function createDirectories(basePath, structure) {
       if (Array.isArray(structure[folder])) {
         structure[folder].forEach((file) => {
           const filePath = path.join(folderPath, file);
-          fs.writeFileSync(filePath, '', 'utf-8');
+          fs.writeFileSync(filePath, 'This is a placeholder text.', 'utf-8');
           console.log(`Created file: ${filePath}`);
         });
       } else {
