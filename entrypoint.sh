@@ -17,7 +17,13 @@ touch config/{database.js,env.js}
 mkdir -p public/{css,js,images}
 mkdir -p tests/{unit,integration}
 
-# Commit and push changes
-git add -A && git commit -m "Add project structure" && git push
+# Commit changes
+git add -A && git commit -m "Add project structure"
+
+# Pull latest changes
+git pull --rebase origin main
+
+# Push changes
+git push origin main
 
 echo "========================"
