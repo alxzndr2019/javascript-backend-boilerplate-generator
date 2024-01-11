@@ -10,11 +10,14 @@ git config --global --add safe.directory /github/workspace
 # Move to the GitHub workspace (where the repository is mounted)
 cd /github/workspace
 
-node /app/index.js
-# Create a text file with "Hello, World!"
-echo "Hello, World!" > hello.txt
+# Create directories and files
+mkdir -p src/{controllers,models,routes}
+mkdir -p config
+touch config/{database.js,env.js}
+mkdir -p public/{css,js,images}
+mkdir -p tests/{unit,integration}
 
 # Commit and push changes
-git add -A && git commit -m "Add hello.txt with Hello, World!" && git push
+git add -A && git commit -m "Add project structure" && git push
 
 echo "========================"
